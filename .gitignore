@@ -1,3 +1,15 @@
+target/
+node_modules/
+src/main/bundles/
+src/main/frontend/generated/
+src/main/frontend/index.html
+error-screenshots/
+vite.generated.ts
+vite.config.ts
+package.json
+tsconfig.json
+types.d.ts
+
 # Compiled class file
 *.class
 
