@@ -1,9 +1,14 @@
 package com.vaadin.starter.bakery.backend.data.entity;
 
+import io.quarkus.security.jpa.Password;
+import io.quarkus.security.jpa.Roles;
+import io.quarkus.security.jpa.UserDefinition;
+import io.quarkus.security.jpa.Username;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -12,17 +17,21 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
-@Entity(name="UserInfo")
+@UserDefinition
+@Entity
+@Table(name = "user_info")
 public class User extends AbstractEntity {
 
 	@NotEmpty
 	@Email
 	@Size(max = 255)
 	@Column(unique = true)
+	@Username
 	public String email;
 
 	@NotNull
 	@Size(min = 4, max = 255)
+	@Password
 	public String passwordHash;
 
 	@NotBlank
@@ -35,6 +44,7 @@ public class User extends AbstractEntity {
 
 	@NotBlank
 	@Size(max = 255)
+	@Roles
 	public String role;
 
 	public boolean locked = false;
