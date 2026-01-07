@@ -48,6 +48,7 @@ jobs:
         with:
           name: files
           path: |
+            **/target/*-reports
             **/error-screenshots
             ./target/quarkus.log
           retention-days: 7
@@ -109,6 +110,7 @@ jobs:
         with:
           name: native-debug-artifacts
           path: |
-            **/error-screenshots
-            ./target/native-app.log
+            ./target/*-reports
+            ./error-screenshots
+            ./target/quarkus.log
           retention-days: 7
