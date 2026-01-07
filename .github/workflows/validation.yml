@@ -46,10 +46,10 @@ jobs:
       - if: ${{always()}}
         uses: actions/upload-artifact@v4
         with:
-          name: files
+          name: debug-artifacts
           path: |
-            **/target/*-reports
-            **/error-screenshots
+            ./target/*-reports
+            ./error-screenshots
             ./target/quarkus.log
           retention-days: 7
 
