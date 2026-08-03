@@ -15,7 +15,7 @@
         <quarkus.platform.version>3.32.0</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.4</surefire-plugin.version>
-        <vaadin.version>25.2.4</vaadin.version>
+        <vaadin.version>25.2.5</vaadin.version>
     </properties>
 
     <dependencyManagement>
